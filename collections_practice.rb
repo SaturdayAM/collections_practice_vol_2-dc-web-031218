@@ -71,7 +71,7 @@ def merge_data(keys, data)
 
   puts to_return
   puts "Keys:\n\n" + keys
-  
+
   #Extract data associated with "name"
   data.each do |innerhash|
     innerhash.each do |name, name_data|
@@ -112,4 +112,4 @@ data = [
  }
 ]
 
-#merge_data(keys, data)
+merge_data(keys, data)
