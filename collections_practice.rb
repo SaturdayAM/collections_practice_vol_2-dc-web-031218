@@ -1,1 +1,83 @@
 # your code goes here
+require 'pry'
+
+# check if every element or arr begins with "r"
+def begins_with_r(arr)
+  arr.each do |str|
+    if !str.start_with?("r")
+      return false
+    end
+  end
+  true
+end
+
+#return strings in an array that contain 'a'
+def contain_a(arr)
+  to_return = []
+  arr.each do |str|
+    if str.include?('a')
+      to_return << str
+    end
+  end
+  to_return
+end
+
+#return first str in array beginning with "wa"
+def first_wa(arr)
+  arr.each do |str|
+    temp = str.to_s
+    if temp.start_with?('wa')
+      return str
+    end
+  end
+  ""
+end
+
+#remove non-string objects in array
+def remove_non_strings(arr)
+  to_return = []
+  arr.each do |obj|
+    if obj.class == String
+      to_return << obj
+    end
+  end
+  arr = to_return
+end
+
+#count elements
+def count_elements(arr)
+  temp = Hash.new(0)
+  arr.each do |key|
+     temp[key[:name]] += 1
+  end
+  to_return = []
+  temp.each do |name, count|
+    to_return.push({:name => "#{name}",:count => count})
+  end
+  to_return
+end
+
+#combine two nested data structures
+def merge_data(keys, data)
+  to_return = []
+  temp = Hash.new(0)
+
+  #Extract :first_name=>"name"
+  keys.each do |innerhash|
+    innerhash.each do |name_key, name|
+      to_return.push({name_key => name})
+    end
+  end
+
+  #Extract data associated with "name"
+  data.each do |innerhash|
+    innerhash.each do |name, name_data|
+      to_return.each do |entry|
+        if entry[:first_name] == name
+          entry.merge(name_data)
+        end
+      end
+    end
+  end
+  to_return
+end
