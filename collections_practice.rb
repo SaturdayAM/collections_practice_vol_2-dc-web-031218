@@ -77,11 +77,12 @@ def merge_data(keys, data)
         if entry[:first_name] == name
           tempHash = entry.merge(name_data)
           actual_return.push(tempHash)
-          
         end
       end
     end
   end
+
+  actual_return
 end
 
 
