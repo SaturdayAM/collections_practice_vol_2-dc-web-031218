@@ -74,10 +74,10 @@ def merge_data(keys, data)
     innerhash.each do |name, name_data|
       to_return.each do |entry|
         if entry[:first_name] == name
-          entry.merge(name_data)
+          puts entry.merge(name_data)
+
         end
       end
     end
   end
-  to_return
 end
