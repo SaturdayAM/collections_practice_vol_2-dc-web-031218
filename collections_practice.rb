@@ -61,7 +61,6 @@ end
 def merge_data(keys, data)
   to_return = []
   actual_return = []
-  temp = Hash.new(0)
 
   #Extract :first_name=>"name"
   keys.each do |innerhash|
@@ -70,6 +69,9 @@ def merge_data(keys, data)
     end
   end
 
+  puts to_return
+  puts "Keys:\n\n" + keys
+  
   #Extract data associated with "name"
   data.each do |innerhash|
     innerhash.each do |name, name_data|
