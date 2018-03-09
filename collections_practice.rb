@@ -67,7 +67,7 @@ def merge_data(keys, data)
   #Extract data associated with "name"
   data.each do |innerhash|
     innerhash.each do |name, name_data|
-      to_return.each do |entry|
+      keys.each do |entry|
         if entry[:first_name] == name
           tempHash = entry.merge(name_data)
           actual_return.push(tempHash)
@@ -104,4 +104,4 @@ data = [
  }
 ]
 
-merge_data(keys, data)
+#merge_data(keys, data)
