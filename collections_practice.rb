@@ -70,7 +70,7 @@ def merge_data(keys, data)
   end
 
   puts to_return
-  puts "Keys:\n\n" + keys
+  puts "Keys:\n\n" + keys.to_s
 
   #Extract data associated with "name"
   data.each do |innerhash|
