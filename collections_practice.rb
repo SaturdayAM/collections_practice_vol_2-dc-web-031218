@@ -69,7 +69,7 @@ def merge_data(keys, data)
     end
   end
 
-  puts to_return
+  puts to_return.to_s
   puts "Keys:\n\n" + keys.to_s
 
   #Extract data associated with "name"
