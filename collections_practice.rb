@@ -62,11 +62,6 @@ def merge_data(keys, data)
   actual_return = []
 
   #Extract :first_name=>"name"
-  keys.each do |innerhash|
-    innerhash.each do |name_key, name|
-      to_return.push({name_key => name})
-    end
-  end
 
   puts "Keys:\n\n" + keys.to_s
 
