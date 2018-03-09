@@ -62,7 +62,6 @@ def merge_data(keys, data)
   actual_return = []
 
   #Extract :first_name=>"name"
-
   puts "Keys:\n\n" + keys.to_s
 
   #Extract data associated with "name"
