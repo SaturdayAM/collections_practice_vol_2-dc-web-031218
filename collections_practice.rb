@@ -60,6 +60,7 @@ end
 #combine two nested data structures
 def merge_data(keys, data)
   to_return = []
+  actual_return = []
   temp = Hash.new(0)
 
   #Extract :first_name=>"name"
@@ -74,8 +75,9 @@ def merge_data(keys, data)
     innerhash.each do |name, name_data|
       to_return.each do |entry|
         if entry[:first_name] == name
-          puts entry.merge(name_data)
-
+          tempHash = entry.merge(name_data)
+          actual_return.push(tempHash)
+          
         end
       end
     end
